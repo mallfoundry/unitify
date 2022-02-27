@@ -1,8 +1,8 @@
 import { App } from "vue";
-import UButton from "./components/u-button/u-button.vue";
-import UAvatar from "./components/u-avatar/u-avatar.vue";
+import {Button} from "./components/button";
+import Avatar from "./components/avatar/avatar.vue";
 // 所有组件列表
-const components = [UButton,UAvatar];
+const components = [Button,Avatar];
 
 // 定义 install 方法， App 作为参数
 const install = (app: App): void => {
@@ -10,7 +10,7 @@ const install = (app: App): void => {
   components.map((component) => app.component(component.name, component));
 };
 
-export { UButton,UAvatar };
+export { Button,Avatar };
 
 export default {
   install,

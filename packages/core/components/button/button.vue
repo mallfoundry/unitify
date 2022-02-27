@@ -11,7 +11,7 @@ export default defineComponent({
   name: "u-button",
   props:{
     type:{
-      default:String as PropType<ButtonTypes>
+      type:String as PropType<ButtonTypes>
     },
     size:{
       type:String,
@@ -29,5 +29,5 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-  @import "./u-button.scss";
+  @import "./button.scss";
 </style>

@@ -1,12 +1,12 @@
 {
 	"easycom": {
-		"^u-(.*)": ".././../core/components/u-$1/u-$1.vue"
+		"^u-(.*)": ".././../core/components/$1/$1.vue"
 	},
 	"pages": [ 
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "unitify-ui"
 			}
 		}
 	],
