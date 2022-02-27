@@ -1,6 +1,6 @@
 <template>
   <button class="fancy-btn">
-    <slot></slot>
+    u-button
   </button>
 </template>
 
