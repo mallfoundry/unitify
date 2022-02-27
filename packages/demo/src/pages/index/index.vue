@@ -1,7 +1,7 @@
 <template>
   <view class="">
       <view class="test">
-        <u-avatar></u-avatar>
+        <u-button type="primary"></u-button>
       </view>
   </view>
 </template>

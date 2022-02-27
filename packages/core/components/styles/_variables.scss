@@ -1,0 +1,92 @@
+// Color Palette
+$black: #000;
+$white: #fff;
+
+$gray-1: #f7f8fa;
+$gray-2: #f2f3f5;
+$gray-3: #ebedf0;
+$gray-4: #dcdee0;
+$gray-5: #c8c9cc;
+$gray-6: #969799;
+$gray-7: #646566;
+$gray-8: #323233;
+
+$red: #ee0a24;
+$blue: #1989fa;
+$cyan: #2db7f5;
+$green: #07c160;
+$orange: #ff976a;
+
+$orange-dark: #ed6a0c;
+$orange-light: #fffbe8;
+
+// Base Unit
+$hd: 2 !default;
+
+// Gradient Colors
+$gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+$gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
+// Component Colors
+$primary-color: var(--blue, $blue);
+$info-color: var(--cyan, $cyan);
+$success-color: var(--green, $green);
+$warning-color: var(--orange, $orange);
+$danger-color: var(--red, $red);
+$text-color: var(--gray-8, $gray-8);
+$text-color-2: var(--gray-6, $gray-6);
+$text-color-3: var(--gray-5, $gray-5);
+$text-link-color: #576b95;
+$active-color: var(--gray-2, $gray-2);
+$active-opacity: 0.7;
+$disabled-opacity: 0.5;
+$background-color: var(--gray-1, $gray-1);
+$background-color-light: var(--white, $white);
+$text-link-color: #576b95;
+
+// Padding
+$padding-base: 8rpx;
+$padding-xs: $padding-base * 2;
+$padding-sm: $padding-base * 3;
+$padding-md: $padding-base * 4;
+$padding-lg: $padding-base * 6;
+$padding-xl: $padding-base * 8;
+
+// Height
+$height-xs: 32rpx;
+$height-sm: 36rpx;
+$height-md: 40rpx;
+$height-lg: 44rpx;
+
+$font-weight-bold: 500;
+
+// Font
+$font-size-xs: 20rpx;
+$font-size-sm: 24rpx;
+$font-size-md: 28rpx;
+$font-size-lg: 32rpx;
+// Line Height
+$line-height-xs: 28rpx;
+$line-height-sm: 32rpx;
+$line-height-md: 40rpx;
+$line-height-lg: 44rpx;
+
+$base-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
+helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
+'Microsoft Yahei', sans-serif;
+
+$price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue, arial, sans-serif;
+
+// Animation
+$animation-duration-base: 0.3s;
+$animation-duration-fast: 0.2s;
+$animation-timing-function-enter: ease-out;
+$animation-timing-function-exit: ease-in;
+
+// Border
+$border-color: var(--gray-3, $gray-3);
+$border-width-base: 2rpx;
+$border-radius-sm: 4rpx;
+$border-radius-md: 8rpx;
+$border-radius-lg: 16rpx;
+$border-radius-max: 999rpx;

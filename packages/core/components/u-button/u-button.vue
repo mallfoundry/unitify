@@ -1,12 +1,33 @@
 <template>
-  <button class="fancy-btn">
+  <view :class="['unitify-button--'+type,'unitify-button--'+size]" class="unitify-button unitify-button--contained">
     u-button
-  </button>
+  </view>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent,PropType } from "vue";
+type ButtonTypes = "primary"|"success"|"warning"|"danger"|"default"
 export default defineComponent({
   name: "u-button",
+  props:{
+    type:{
+      default:String as PropType<ButtonTypes>
+    },
+    size:{
+      type:String,
+      default:"medium"
+    }
+  },
+  setup(props){
+   
+    
+    
+    return {
+      
+    }
+  }
 });
 </script>
+<style lang="scss" scoped>
+  @import "./u-button.scss";
+</style>
