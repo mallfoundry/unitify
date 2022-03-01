@@ -2,11 +2,16 @@
 	"easycom": {
 		"^u-(.*)": ".././../core/components/$1/$1.vue"
 	},
-	"pages": [ 
-		{
+	"pages": [{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "unitify-ui"
+			}
+		},
+		{
+			"path": "pages/basic/button/index",
+			"style": {
+				"navigationBarTitleText": "button"
 			}
 		}
 	],
