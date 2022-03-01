@@ -33,12 +33,14 @@
   }
 
   &--mini {
+    line-height: var(--button-mini-height, $button-mini-height);
     height: var(--button-mini-height, $button-mini-height);
     padding: var(--button-mini-padding, $button-mini-padding);
     font-size: var(--button-mini-font-size, $button-mini-font-size);
   }
 
   &--small {
+    line-height:  var(--button-small-height, $button-small-height);
     height: var(--button-small-height, $button-small-height);
     padding: var(--button-small-padding, $button-small-padding);
     font-size: var(--button-small-font-size, $button-small-font-size);
@@ -46,12 +48,14 @@
 
   &--medium {
     height: var(--button-medium-height, $button-medium-height);
+    line-height: var(--button-medium-height, $button-medium-height);;
     padding: var(--button-medium-padding, $button-medium-padding);
     font-size: var(--button-medium-font-size, $button-medium-font-size);
   }
 
   &--large {
     width: 100%;
+    line-height:var(--button-large-height, $button-large-height) ;
     height: var(--button-large-height, $button-large-height);
     font-size: var(--button-large-font-size, $button-large-font-size);
   }
@@ -217,7 +221,7 @@
   }
 
   &--hairline {
-    border-width: 0;
+    border-width: 0.5rpx;
 
     &::after {
       border-color: inherit;
@@ -253,8 +257,6 @@
     justify-content: center;
     height: 100%;
 
-    // fix icon vertical align
-    // see: https://github.com/youzan/vant/issues/7617
     &::before {
       content: ' ';
     }
