@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/uni-app": "^1.4.4",
     "@vitejs/plugin-vue": "^2.2.2",
     "@vitejs/plugin-vue-jsx": "^1.3.7",
     "@vue/compiler-sfc": "^3.2.31",
@@ -23,6 +24,5 @@
     "ts-morph": "^13.0.3",
     "vite": "^2.8.4",
     "vue": "^3.0.0"
-
   }
 }

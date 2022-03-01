@@ -1,12 +1,12 @@
-interface Pages{
-  title:string
-  name:string
-  path:string
+interface Pages {
+  title: string;
+  name: string;
+  path: string;
 }
-export  interface subpackages {
-  root:string
-  title:string
-  pages:Pages[]
+export interface subpackages {
+  root: string;
+  title: string;
+  pages: Pages[];
 }
 
 export default [
@@ -18,6 +18,17 @@ export default [
         title: "Button 按钮",
         name: "Button",
         path: "button/index",
+      },
+    ],
+  },
+  {
+    root: "pages/navigation",
+    title: "导航组件",
+    pages: [
+      {
+        title: "Tabs 标签页",
+        name: "Tabs",
+        path: "tabs/index",
       },
     ],
   },

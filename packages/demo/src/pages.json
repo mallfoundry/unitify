@@ -13,6 +13,12 @@
 			"style": {
 				"navigationBarTitleText": "button"
 			}
+		},
+		{
+			"path": "pages/navigation/tabs/index",
+			"style": {
+				"navigationBarTitleText": "tabs"
+			}
 		}
 	],
 	"globalStyle": {
