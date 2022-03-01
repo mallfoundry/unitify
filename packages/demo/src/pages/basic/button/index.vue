@@ -1,6 +1,7 @@
 <template>
   <Pages class="button">
     <Block title="基本使用" class="block">
+      <Icon name="chat-o" />
       <Button color="primary">主要按钮</Button>
       <Button color="info">信息按钮</Button>
       <Button color="success">成功按钮</Button>
