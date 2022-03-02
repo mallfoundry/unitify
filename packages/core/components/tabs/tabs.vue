@@ -1,29 +1,41 @@
 <template>
   <view class="unitify-tabs">
-    <view class="unitify-tabs--nav" ref="nav">
+    <scroll-view
+      scroll-x="true"
+      scroll-with-animation
+      :scroll-left="translateLeft"
+      class="unitify-tabs--scroll"
+    >
       <view
-        class="unitify-tabs--nav--title"
+        class="unitify-tabs--scroll--cell"
         v-for="(item, index) in titles"
         :key="item.title"
         @click="activeClick(index)"
+        >{{ item.title }}</view
       >
-        {{ item.title }}
-      </view>
-
       <view
-        class="unitify-tabs--nav--line"
+        class="unitify-tabs--scroll--line"
         :style="{
           left: translate + 'px',
-          transform:   ' translateX(-50%)',
-          transition: isActive?'left 0.3s ease 0s':'',
+          transform: ' translateX(-50%)',
+          transition: isActive ? 'left 0.3s ease 0s' : '',
         }"
       ></view>
-    </view>
-    <slot></slot>
+    </scroll-view>
+    <swiper class="swiper" disable-touch :current="active" :interval="interval">
+      <slot></slot>
+    </swiper>
   </view>
 </template>
 <script lang="ts">
-import { defineComponent, ref, computed, onMounted, useSlots, nextTick } from "vue";
+import {
+  defineComponent,
+  reactive,
+  ref,
+  computed,
+  onMounted,
+  useSlots,
+} from "vue";
 import { useSelectorQuery } from "../utils";
 export default defineComponent({
   name: "Tabs",
@@ -36,10 +48,13 @@ export default defineComponent({
   setup(props, { emit }) {
     // vue data
     const { active } = props;
-    let navWidth = 0;
+    const navWidth = reactive({
+      width: 0,
+    });
     const slots = useSlots();
     const translate = ref(0);
-    const isActive = ref(false)
+    const isActive = ref(false);
+    const translateLeft = ref(0);
     //computed
     const titles = computed(() => {
       return slots.default?.().map((item: any) => {
@@ -48,8 +63,7 @@ export default defineComponent({
     });
 
     const interval = computed<number>(() => {
-      const titleNumber = titles.value;
-      return Math.floor(navWidth) / (titleNumber ? titleNumber.length : 1);
+      return Math.floor(navWidth.width) / (titles.value as any[]).length;
     });
     //methods
     const calculateInterval = (num: number) => {
@@ -58,22 +72,27 @@ export default defineComponent({
     //event
     const activeClick = (index: number) => {
       translate.value = calculateInterval(index);
-         isActive.value = true
+      isActive.value = true;
+      const toRight = useSelectorQuery(".unitify-tabs").width;
+      const periphery =
+        translate.value + useSelectorQuery(".unitify-tabs--scroll--cell").width;
+      translateLeft.value = toRight < periphery ? toRight : 0;
       emit("update:active", index);
     };
     //Hooks
     onMounted(() => {
-      navWidth = useSelectorQuery(".unitify-tabs--nav").width;
+      navWidth.width =
+        useSelectorQuery(".unitify-tabs--scroll--cell").width *
+        (titles.value as any[]).length;
       translate.value = calculateInterval(active);
-
     });
-
     return {
       activeClick,
       titles,
       translate,
       interval,
-      isActive
+      isActive,
+      translateLeft,
     };
   },
 });
@@ -84,16 +103,20 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .unitify-tabs {
-  &--nav {
-    position: relative;
-    display: flex;
+  &--scroll {
+    width: 100%;
     height: 90rpx;
-    &--title {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #646566;
+    font-size: 26rpx;
+
+    &--cell {
+      display: inline-block;
+      height: 90rpx;
+      width: 25%;
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
+      line-height: 90rpx;
     }
     &--line {
       position: absolute;

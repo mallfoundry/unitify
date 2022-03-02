@@ -1,17 +1,19 @@
 <template>
-  <view class="tabs">
-    <slot></slot>
-  </view>
+
+    <swiper-item>
+      <slot></slot>
+    </swiper-item>
+ 
 </template>
 
 <script lang="ts">
-import { ref,defineComponent } from "vue";
+import { ref, defineComponent } from "vue";
 export default defineComponent({
-    name:"Tab",
-    setup(){
-      return {}
-    }
-})
+  name: "Tab",
+  setup() {
+    return {};
+  },
+});
 </script>
 
 <style lang="scss" scoped>
