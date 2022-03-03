@@ -1,18 +1,7 @@
 <template>
   <view class="icon">
     <Tabs v-model:active="active">
-      <Tab title="标签 1">
-        <view
-          class="card-item"
-          :name="item"
-          :key="index"
-          v-for="(item, index) in icons.basic"
-        >
-          <Icon :name="item" />
-          {{ item }}
-        </view>
-      </Tab>
-      <Tab title="基础">
+      <Tab title="基础" :value="0">
         <view class="card">
           <view
             class="card-item"
@@ -25,7 +14,20 @@
           </view>
         </view>
       </Tab>
-      <Tab title="线框风格">
+      <Tab title="基础" :value="1">
+        <view class="card">
+          <view
+            class="card-item"
+            :name="item"
+            :key="index"
+            v-for="(item, index) in icons.basic"
+          >
+            <Icon :name="item" />
+            {{ item }}
+          </view>
+        </view>
+      </Tab>
+      <Tab title="线框风格" :value="2">
         <view class="card">
           <view
             class="card-item"
@@ -38,7 +40,7 @@
           </view>
         </view>
       </Tab>
-      <Tab title="实底风格">
+      <Tab title="实底风格" :value="3">
         <view class="card">
           <view
             class="card-item"

@@ -11,8 +11,8 @@
         :class="ellipsis ? 'unitify-tabs--scroll--ellipsis' : ''"
         v-for="(item, index) in titles"
         :key="item.title"
-        @click="activeClick(index)"
-        >{{ item.title }}</view
+        @click="activeClick(index, item.title)"
+        >{{ item.title }}{{ active }}</view
       >
       <view
         class="unitify-tabs--scroll--line"
@@ -24,6 +24,7 @@
       ></view>
     </scroll-view>
     <view class="unitify-tabs--content">
+      <transition></transition>
       <slot></slot>
     </view>
   </view>
@@ -37,37 +38,28 @@ import {
   onMounted,
   useSlots,
   PropType,
-  provide
+  provide,
+  toRef,
 } from "vue";
 import { useSelectorQuery } from "../utils";
 export default defineComponent({
   name: "Tabs",
   props: {
-    height: {
-      type: Number,
-      default: 150,
-    },
     active: {
       type: Number,
       default: 0,
     },
-    duration: {
-      type: Number as PropType<Number>,
-      default: 300,
-    },
+
     ellipsis: {
-      type: Boolean as PropType<Boolean>,
-      default: false,
-    },
-    swipeable: {
       type: Boolean as PropType<Boolean>,
       default: false,
     },
   },
   setup(props, { emit }) {
     // vue data
-    const { active } = props;
-    
+    const active: any = toRef(props, "active");
+    console.log(active);
+
     const navWidth = reactive({
       width: 0,
     });
@@ -88,11 +80,14 @@ export default defineComponent({
     });
 
     //methods
-    const calculateInterval = (num: number) => {
-      return interval.value * (num + 1) - interval.value / 2;
+    const calculateInterval = (num: any) => {
+      return interval.value * (num + 1 || num.value + 1) - interval.value / 2;
     };
+    provide("active", active);
     //event
-    const activeClick = (index: number) => {
+    const activeClick = (index: number, title: string) => {
+      console.log(index, title);
+
       translate.value = calculateInterval(index);
       isActive.value = true;
       const toRight = useSelectorQuery(".unitify-tabs").width;
@@ -106,7 +101,8 @@ export default defineComponent({
       navWidth.width =
         useSelectorQuery(".unitify-tabs--scroll--cell").width *
         (titles.value as any[]).length;
-      translate.value = calculateInterval(active);
+
+      translate.value = calculateInterval(active?.value);
     });
     return {
       activeClick,
@@ -115,6 +111,7 @@ export default defineComponent({
       interval,
       isActive,
       translateLeft,
+      active,
     };
   },
 });
@@ -126,7 +123,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .unitify-tabs {
   flex-direction: column;
-
+  &--content {
+    position: relative;
+  }
   &--scroll {
     width: 100%;
     height: 90rpx;
