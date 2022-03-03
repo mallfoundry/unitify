@@ -8,6 +8,7 @@
     >
       <view
         class="unitify-tabs--scroll--cell"
+        :class="ellipsis ? 'unitify-tabs--scroll--ellipsis' : ''"
         v-for="(item, index) in titles"
         :key="item.title"
         @click="activeClick(index)"
@@ -22,9 +23,9 @@
         }"
       ></view>
     </scroll-view>
-    <swiper class="swiper" disable-touch :current="active" :interval="interval">
+    <view class="unitify-tabs--content">
       <slot></slot>
-    </swiper>
+    </view>
   </view>
 </template>
 <script lang="ts">
@@ -35,19 +36,38 @@ import {
   computed,
   onMounted,
   useSlots,
+  PropType,
+  provide
 } from "vue";
 import { useSelectorQuery } from "../utils";
 export default defineComponent({
   name: "Tabs",
   props: {
+    height: {
+      type: Number,
+      default: 150,
+    },
     active: {
       type: Number,
       default: 0,
+    },
+    duration: {
+      type: Number as PropType<Number>,
+      default: 300,
+    },
+    ellipsis: {
+      type: Boolean as PropType<Boolean>,
+      default: false,
+    },
+    swipeable: {
+      type: Boolean as PropType<Boolean>,
+      default: false,
     },
   },
   setup(props, { emit }) {
     // vue data
     const { active } = props;
+    
     const navWidth = reactive({
       width: 0,
     });
@@ -55,6 +75,7 @@ export default defineComponent({
     const translate = ref(0);
     const isActive = ref(false);
     const translateLeft = ref(0);
+
     //computed
     const titles = computed(() => {
       return slots.default?.().map((item: any) => {
@@ -65,6 +86,7 @@ export default defineComponent({
     const interval = computed<number>(() => {
       return Math.floor(navWidth.width) / (titles.value as any[]).length;
     });
+
     //methods
     const calculateInterval = (num: number) => {
       return interval.value * (num + 1) - interval.value / 2;
@@ -103,6 +125,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .unitify-tabs {
+  flex-direction: column;
+
   &--scroll {
     width: 100%;
     height: 90rpx;
@@ -110,7 +134,11 @@ export default defineComponent({
     white-space: nowrap;
     color: #646566;
     font-size: 26rpx;
-
+    &--ellipsis {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
     &--cell {
       display: inline-block;
       height: 90rpx;

@@ -19,6 +19,27 @@ export default [
         name: "Button",
         path: "button/index",
       },
+      {
+        title: "Icon 图标",
+        name: "Icon",
+        path: "icon/index",
+      },
+    ],
+  },
+  {
+    root: "pages/display",
+    title: "基础组件",
+    pages: [
+      {
+        title: "Swiper 轮播图",
+        name: "Button",
+        path: "swiper/index",
+      },
+      {
+        title: "Icon 图标",
+        name: "Icon",
+        path: "icon/index",
+      },
     ],
   },
   {

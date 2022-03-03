@@ -3,9 +3,9 @@ import { Button } from "./components/button";
 import Avatar from "./components/avatar/avatar.vue";
 import { Icon } from "./components/icon";
 import { Tab, Tabs } from "./components/tabs";
-
+import { Swiper } from "./components/swiper";
 // 所有组件列表
-const components = [Button, Avatar, Icon, Tab, Tabs];
+const components = [Button, Avatar, Icon, Tab, Tabs, Swiper];
 
 // 定义 install 方法， App 作为参数
 const install = (app: App): void => {
@@ -13,7 +13,7 @@ const install = (app: App): void => {
   components.map((component) => app.component(component.name, component));
 };
 
-export { Button, Avatar, Icon, Tab, Tabs };
+export { Button, Avatar, Icon, Tab, Tabs, Swiper };
 
 export default {
   install,

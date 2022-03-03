@@ -1,6 +1,6 @@
 <template>
 
-    <swiper-item>
+    <swiper-item style="height: 100%;">
       <slot></slot>
     </swiper-item>
  
