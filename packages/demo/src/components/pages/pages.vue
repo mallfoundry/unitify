@@ -18,5 +18,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .pages {
   padding: 30rpx;
+  background: #F7F8FA;
+  height:100vh
 }
 </style>

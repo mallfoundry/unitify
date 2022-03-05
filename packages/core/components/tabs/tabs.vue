@@ -12,7 +12,7 @@
         v-for="(item, index) in titles"
         :key="item.title"
         @click="activeClick(index, item.title)"
-        >{{ item.title }}{{ active }}</view
+        >{{ item.title }}</view
       >
       <view
         class="unitify-tabs--scroll--line"
@@ -24,7 +24,6 @@
       ></view>
     </scroll-view>
     <view class="unitify-tabs--content">
-      <transition></transition>
       <slot></slot>
     </view>
   </view>
@@ -49,7 +48,6 @@ export default defineComponent({
       type: Number,
       default: 0,
     },
-
     ellipsis: {
       type: Boolean as PropType<Boolean>,
       default: false,
@@ -58,8 +56,6 @@ export default defineComponent({
   setup(props, { emit }) {
     // vue data
     const active: any = toRef(props, "active");
-    console.log(active);
-
     const navWidth = reactive({
       width: 0,
     });
@@ -86,8 +82,6 @@ export default defineComponent({
     provide("active", active);
     //event
     const activeClick = (index: number, title: string) => {
-      console.log(index, title);
-
       translate.value = calculateInterval(index);
       isActive.value = true;
       const toRight = useSelectorQuery(".unitify-tabs").width;
@@ -121,38 +115,5 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
-.unitify-tabs {
-  flex-direction: column;
-  &--content {
-    position: relative;
-  }
-  &--scroll {
-    width: 100%;
-    height: 90rpx;
-    overflow: hidden;
-    white-space: nowrap;
-    color: #646566;
-    font-size: 26rpx;
-    &--ellipsis {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-    &--cell {
-      display: inline-block;
-      height: 90rpx;
-      width: 25%;
-      text-align: center;
-      line-height: 90rpx;
-    }
-    &--line {
-      position: absolute;
-      width: 60rpx;
-      height: 6rpx;
-      background: #ee0a24;
-      bottom: 0;
-      border-radius: 3rpx;
-    }
-  }
-}
+@import "./tabs.scss"
 </style>

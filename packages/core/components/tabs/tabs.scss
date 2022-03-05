@@ -1,0 +1,38 @@
+@import "./variables";
+.#{$component-prefix}tabs {
+  font-family: $base-font-family;
+  flex-direction: column;
+  &--content {
+    position: relative;
+  }
+  &--scroll {
+    background: $tabs-srcoll-color;
+    border-radius: $tabs-border-radius;
+    width: 100%;
+    height: $tabs-scroll-height;
+    overflow: hidden; 
+    white-space: nowrap;
+    color: $text-color;
+    font-size: $tabs-scroll-fontSize;
+    &--ellipsis {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    &--cell {
+      display: inline-block;
+      height: $tabs-scroll-height;
+      width: 25%;
+      text-align: center;
+      line-height: $tabs-scroll-height;
+    }
+    &--line {
+      position: absolute;
+      width: 60rpx;
+      height: 6rpx;
+      background: $tabs-line-color;
+      bottom: 0;
+      border-radius: $tabs-line-border-radius;
+    }
+  }
+}

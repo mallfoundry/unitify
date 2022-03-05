@@ -1,5 +1,5 @@
 <template>
-  <span class="unitify-icon" :class="name"> </span>
+  <span class="unitify-icon" :class="name" :style="{color:color,fontSize:size}"> </span>
 </template>
 
 <script lang="ts">
@@ -10,6 +10,12 @@ export default defineComponent({
   name: "Icon",
   props:{
     name:{
+      type:String
+    },
+    color:{
+      type:String
+    },
+    size:{
       type:String
     }
   },

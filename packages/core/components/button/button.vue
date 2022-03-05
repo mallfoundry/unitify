@@ -26,12 +26,14 @@
     ]"
     class="unitify-button"
   >
+    <Icon :name="icon" style="margin-right: 5rpx" />
     <slot></slot>
   </view>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
+import Icon from "../icon/icon.vue";
 import {
   ButtonFormType,
   ButtonVariant,
@@ -41,6 +43,9 @@ import {
 } from "./button.shared";
 export default defineComponent({
   name: "Button",
+  components: {
+    Icon,
+  },
   props: {
     color: {
       type: String as PropType<ButtonColor>,
@@ -73,6 +78,9 @@ export default defineComponent({
     hairline: {
       type: Boolean,
       default: false,
+    },
+    icon: {
+      type: String,
     },
   },
   setup(props) {

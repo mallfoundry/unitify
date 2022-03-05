@@ -42,6 +42,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .pages {
   padding: 30rpx;
+
   &-logo {
     padding: 0 50rpx;
     &-info {
@@ -60,11 +61,13 @@ export default defineComponent({
     }
   }
   &-card {
+    
     &-title {
       margin: 30rpx;
       color: rgba(69, 90, 100, 0.6);
     }
     &-item {
+        margin-bottom: 30rpx;
       height: 80rpx;
       background: #f7f8fa;
       padding-left: 40rpx;

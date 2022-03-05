@@ -1,5 +1,5 @@
 <template>
-  <Pages class="button">
+  <Pages class="image">
     <Block title="基本使用" class="block">
       <Button color="primary">主要按钮</Button>
       <Button color="info">信息按钮</Button>

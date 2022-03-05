@@ -13,6 +13,11 @@
 			"style": {
 				"navigationBarTitleText": "button"
 			}
+		},{
+			"path": "pages/basic/flex/index",
+			"style": {
+				"navigationBarTitleText": "flex"
+			}
 		}, {
 			"path": "pages/display/swiper/index",
 			"style": {

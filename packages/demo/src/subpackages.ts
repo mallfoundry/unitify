@@ -18,11 +18,19 @@ export default [
         title: "Button 按钮",
         name: "Button",
         path: "button/index",
+      },{
+        title: "Image 图片",
+        name: "Image",
+        path: "image/index",
       },
       {
         title: "Icon 图标",
         name: "Icon",
         path: "icon/index",
+      },{
+        title: "Flex 布局",
+        name: "Flex",
+        path: "flex/index",
       },
     ],
   },

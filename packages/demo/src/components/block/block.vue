@@ -31,8 +31,5 @@ export default defineComponent({
     font-size: 26rpx;
     color: rgba(69, 90, 100, 0.6);
   }
-  &-content {
-    display: flex;
-  }
 }
 </style>
