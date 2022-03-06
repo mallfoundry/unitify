@@ -1,0 +1,15 @@
+@import "../styles/prefix";
+@import "../styles/variables";
+
+$cell-color:$gray-8;
+$cell-value-color:$gray-6;
+$cell-font-size:$font-size-lg;
+$cell-padding:$padding-md;
+$cell-background-color:$white;
+$cell-border-color:$border-color;
+$cell-border-width :$border-width-base;
+$cell-active-color:$gray-2;
+$cell-brief-font-size:$font-size-sm;
+$cell-large-vertical-padding: var(--padding-sm, $padding-sm);
+$cell-large-title-font-size: var(--font-size-lg, $font-size-lg);
+$cell-large-subtitle-font-size: var(--font-size-md, $font-size-md);

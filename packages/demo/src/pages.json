@@ -7,13 +7,23 @@
 			"style": {
 				"navigationBarTitleText": "unitify-ui"
 			}
+		}, {
+			"path": "pages/basic/cell/index",
+			"style": {
+				"navigationBarTitleText": "cell"
+			}
+		}, {
+			"path": "pages/basic/image/index",
+			"style": {
+				"navigationBarTitleText": "image"
+			}
 		},
 		{
 			"path": "pages/basic/button/index",
 			"style": {
 				"navigationBarTitleText": "button"
 			}
-		},{
+		}, {
 			"path": "pages/basic/flex/index",
 			"style": {
 				"navigationBarTitleText": "flex"
