@@ -5,9 +5,11 @@
   "main": "dist/unitfiy.es.js",
   "module": "dist/unitfiy.es.js",
   "scripts": {
-    "dev": "vite --config ./build/vite.config.serve.js --host",
+    "dev": "cd packages && cd demo && yarn dev:h5",
+    "docs:dev":"cd packages && cd docs && yarn docs:dev",
+    "develop":"yarn dev && yarn docs:dev",
     "build": "vite build --config ./build/vite.config.build.js",
-    "docs:dev": "cd docs && yarn docs:dev",
+
     "docs:build": "cd docs && yarn docs:build"
   },
   "keywords": [],
