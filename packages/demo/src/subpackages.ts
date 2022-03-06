@@ -15,10 +15,16 @@ export default [
     title: "基础组件",
     pages: [
       {
+        title: "Cell 按钮",
+        name: "Cell",
+        path: "cell/index",
+      },
+      {
         title: "Button 按钮",
         name: "Button",
         path: "button/index",
-      },{
+      },
+      {
         title: "Image 图片",
         name: "Image",
         path: "image/index",
@@ -27,7 +33,8 @@ export default [
         title: "Icon 图标",
         name: "Icon",
         path: "icon/index",
-      },{
+      },
+      {
         title: "Flex 布局",
         name: "Flex",
         path: "flex/index",

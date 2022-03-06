@@ -1,0 +1,16 @@
+@import "../styles/prefix";
+
+.#{$component-prefix}image {
+  &--round{
+    border-radius: 50%;
+  }
+  &--content{
+    color: #dedee0;
+    font-size: 50rpx; 
+    background-color: #f7f8fa; 
+    text-align: center;
+    text{
+      font-size: 30rpx;
+    }
+  }
+}

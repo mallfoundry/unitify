@@ -27,7 +27,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .block {
   &-title {
-    padding: 30rpx 0;
+    padding: 30rpx;
     font-size: 26rpx;
     color: rgba(69, 90, 100, 0.6);
   }
