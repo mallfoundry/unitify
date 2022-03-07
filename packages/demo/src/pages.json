@@ -1,0 +1,55 @@
+{
+	"easycom": {
+		"^u-(.*)": ".././../core/components/$1/$1.vue"
+	},
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "unitify-ui"
+			}
+		}, {
+			"path": "pages/basic/cell/index",
+			"style": {
+				"navigationBarTitleText": "cell"
+			}
+		}, {
+			"path": "pages/basic/image/index",
+			"style": {
+				"navigationBarTitleText": "image"
+			}
+		},
+		{
+			"path": "pages/basic/button/index",
+			"style": {
+				"navigationBarTitleText": "button"
+			}
+		}, {
+			"path": "pages/basic/flex/index",
+			"style": {
+				"navigationBarTitleText": "flex"
+			}
+		}, {
+			"path": "pages/display/swiper/index",
+			"style": {
+				"navigationBarTitleText": "swiper"
+			}
+		}, {
+			"path": "pages/basic/icon/index",
+			"style": {
+				"navigationBarTitleText": "icon"
+			}
+		},
+		{
+			"path": "pages/navigation/tabs/index",
+			"style": {
+				"navigationBarTitleText": "tabs"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

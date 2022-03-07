@@ -1,0 +1,17 @@
+@mixin multi-ellipsis($lines) {
+  /* stylelint-disable */
+  /* autoprefixer: ignore next */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  /* stylelint-enable */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

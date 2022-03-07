@@ -1,0 +1,15 @@
+{
+  "name": "@unitify/~core",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {},
+  "keywords": [
+    "unitify",
+    "unitify-ui",
+    "ui",
+    "uni-app"
+
+  ],
+  "author": "",
+  "license": "MIT"
+}

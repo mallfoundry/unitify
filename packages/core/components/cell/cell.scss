@@ -1,0 +1,64 @@
+@import "./variables";
+.#{$component-prefix}cell {
+  font-family: $base-font-family;
+
+  font-size: $cell-font-size;
+  padding: $cell-padding;
+
+  background-color: $cell-background-color;
+  &--active{
+    &:active{
+      background-color: $cell-active-color;
+    }
+  }
+  &--large {
+    padding-top: var(--cell-large-vertical-padding, $cell-large-vertical-padding);
+    padding-bottom: var(--cell-large-vertical-padding, $cell-large-vertical-padding);
+
+    .#{$component-prefix}cell--content--left--title {
+      font-size: var(--cell-large-title-font-size, $cell-large-title-font-size);
+    }
+
+    
+  }
+  position: relative;
+  &::after{
+    position: absolute;
+    box-sizing: border-box;
+    pointer-events: none;
+    content: " ";
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+
+    transform: scale(.5);
+    border-bottom: $cell-border-color $cell-border-width solid;
+
+  }
+  &--content{
+    display: flex;
+    box-sizing: border-box;
+
+    &--left{
+      flex:1;
+      color:$cell-color;
+      &--brief{
+        font-size: $cell-brief-font-size;
+        margin-top: 8rpx;
+        color: $cell-value-color;
+      }
+    }
+    &--right{
+      text-align: right;
+      flex: 1;
+      color: $cell-value-color;
+      display: flex;
+      flex-direction: column;
+      &--text{
+        margin-right: 10rpx;
+      }
+    }
+  }
+
+}
