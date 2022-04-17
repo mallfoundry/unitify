@@ -34,7 +34,7 @@
     "typings/**/*.ts",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "packages/cli/index.js"  ],
   "exclude": [
     "node_modules"
   ]

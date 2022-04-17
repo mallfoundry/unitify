@@ -1,5 +1,5 @@
 {
-  "name": "desktop",
+  "name": "vuepress-starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-search": "^1.9.7",
+    "babel-plugin-component": "^1.1.1",
+    "vuepress": "^1.9.7",
+    "vuepress-theme-reco": "^1.6.11"
+  },
   "dependencies": {
-    "vuepress": "^1.9.7"
+    "async-validator": "1.11.5",
+    "core-js": "2.0",
+    "element-ui": "^2.15.8",
+    "entities": "1.0.0"
   }
 }
