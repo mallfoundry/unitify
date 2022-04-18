@@ -1,10 +1,10 @@
 {
-  "name": "vuepress-starter",
+  "name": "@unitify/docs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
+    "dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
   "keywords": [],
@@ -19,7 +19,6 @@
   "dependencies": {
     "async-validator": "1.11.5",
     "core-js": "2.0",
-    "element-ui": "^2.15.8",
-    "entities": "1.0.0"
+    "element-ui": "^2.15.8"
   }
 }

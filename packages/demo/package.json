@@ -1,10 +1,10 @@
 {
-  "name": "uni-preset-vue",
+  "name": "@unitify/demo",
   "version": "0.0.0",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:custom": "uni -p",
-    "dev:h5": "uni",
+    "dev": "uni",
     "dev:h5:ssr": "uni --ssr",
     "dev:mp-alipay": "uni -p mp-alipay",
     "dev:mp-baidu": "uni -p mp-baidu",
@@ -45,6 +45,7 @@
     "@dcloudio/uni-mp-weixin": "^3.0.0-alpha-3031220220222002",
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3031220220222002",
     "@vitejs/plugin-vue-jsx": "^1.3.7",
+    "sass": "^1.50.0",
     "vue": "^3.2.31",
     "vue-i18n": "^9.1.9",
     "vuex": "^4.0.2"

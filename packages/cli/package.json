@@ -1,5 +1,5 @@
 {
-  "name": "unitify-cli",
+  "name": "@unitify/unitify-cli",
   "version": "1.0.0",
   "description": "",
   "bin": "./lib/index.js",
