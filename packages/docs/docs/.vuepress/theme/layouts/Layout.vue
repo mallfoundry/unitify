@@ -1,35 +1,22 @@
 <template>
   <div id="layout">
     <Header />
-    <div class="content-box">
+    <div class="contentBox">
       <el-row :gutter="20">
         <el-col :span="4">
-          <el-menu
-            default-active="2"
-            class="el-menu-vertical-demo"
-            @open="handleOpen"
-            @close="handleClose"
-            router
-          >
-            <el-menu-item
-              :route="item.regularPath"
-              :index="index"
-              v-for="(item, index) in menuList"
-              :key="item.key"
-            >
-              <span slot="title">{{ item.title }}</span>
-            </el-menu-item>
-          </el-menu></el-col
-        >
-        <el-col :span="12"><Content /></el-col>
-        <el-col :span="8">
-          <iframe
-            src="http://localhost:3000/#/"
-            width="400px"
-            height="700px"
-            style="border: 1px soild #ccc"
-            frameborder="0"
-          />
+          &nbsp;<MyMenu :scrollTop="scrollTop" :menuList="menuList" />
+        </el-col>
+        <el-col :span="14"><Content /></el-col>
+        <el-col :span="6">
+          <div class="iframeBox">
+            <iframe
+              src="http://localhost:3000/#/"
+              width="360px"
+              height="600px"
+              style="border: 1px soild #ccc"
+              frameborder="0"
+            />
+          </div>
         </el-col>
       </el-row>
     </div>
@@ -40,33 +27,46 @@
 <script>
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
+import MyMenu from "../components/Menu";
+import { debounce } from "../utils";
 export default {
   data() {
     return {
       menuList: [],
+      scrollTop: 0,
     };
   },
   mounted() {
     this.menuList = this.$site.pages;
-    console.log(this.menuList);
+    window.addEventListener("scroll", this.handlerScroll);
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    handlerScroll() {
+      this.scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      console.log(this.scrollTop);
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    },
+    debounceFn: debounce,
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handlerScroll);
   },
   components: {
     Header,
     Footer,
+    MyMenu,
   },
 };
 </script>
 <style scoped>
-#layout{
+#layout {
   overflow: hidden;
+}
+.iframeBox {
+  border: 1px solid red;
+  position: fixed;
+  top: 100px;
 }
 </style>
