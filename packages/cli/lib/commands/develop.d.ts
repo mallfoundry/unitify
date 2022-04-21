@@ -1,1 +1,1 @@
-export declare function develop(): Promise<void>;
+export declare function develop(): void;
