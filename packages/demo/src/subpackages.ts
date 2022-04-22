@@ -50,11 +50,6 @@ export default [
         name: "Button",
         path: "swiper/index",
       },
-      {
-        title: "Icon 图标",
-        name: "Icon",
-        path: "icon/index",
-      },
     ],
   },
   {
