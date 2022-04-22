@@ -19,6 +19,7 @@
   "dependencies": {
     "async-validator": "1.11.5",
     "core-js": "2.0",
-    "element-ui": "^2.15.8"
+    "element-ui": "^2.15.8",
+    "vue": "2.6.14"
   }
 }

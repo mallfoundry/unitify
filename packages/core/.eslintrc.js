@@ -3,8 +3,16 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+  parser: "vue-eslint-parser",
+  globals: {
+    defineProps: "readonly",
+    defineEmits: "readonly",
+    defineExpose: "readonly",
+    withDefaults: "readonly",
+  },
   extends: [
     "eslint:recommended",
+    "plugin:vue/vue3-recommended",
     "plugin:vue/essential",
     "plugin:@typescript-eslint/recommended",
   ],
