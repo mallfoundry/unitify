@@ -1,11 +1,13 @@
 {
-  "name": "unitify-cli",
+  "name": "@unitify/unitify-cli",
   "version": "1.0.0",
   "description": "",
-  "bin": "./lib/index.js",
+  "bin": {
+    "unitify-cli":"./lib/index.js"
+  },
   "main": "./src/index.ts",
   "scripts": {
-    "dev": "tsc --watch",
+    "dev:ts": "tsc --watch",
     "build": "tsc"
   },
   "keywords": [],

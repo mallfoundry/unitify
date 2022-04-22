@@ -2,7 +2,9 @@ import {
   Menu,
   Submenu,
   MenuItem,
-  MenuItemGroup
+  MenuItemGroup,
+  Col,
+  Row
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 export default ({
@@ -15,4 +17,6 @@ export default ({
   Vue.use(Submenu)
   Vue.use(MenuItem)
   Vue.use(MenuItemGroup)
+  Vue.use(Col)
+  Vue.use(Row)
 }

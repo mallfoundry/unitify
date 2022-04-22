@@ -25,16 +25,13 @@
     ]
   },
   "include": [
-    "examples/**/*.ts",
-    "examples/**/*.tsx",
-    "examples/**/*.vue",
     "packages/**/*.ts",
     "packages/**/*.tsx",
     "packages/**/*.vue",
     "typings/**/*.ts",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-, "packages/cli/index.js"  ],
+  ],
   "exclude": [
     "node_modules"
   ]
