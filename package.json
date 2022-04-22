@@ -4,14 +4,15 @@
   "description": "Unitify 是移动端组件库 Vant 的 Uniapp &amp; Taro Vue3 版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。",
   "main": "index.js",
   "dependencies": {
-    "mime-types": "^2.1.35",
-    "typescript": "^4.6.3",
-    "multicast-dns-service-types": "^1.1.0",
-    "eslint-scope": "^4.0.3"
+    "typescript": "^4.6.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+
+  },
   "scripts": {
-    "develop": "pnpm dev -r"
+    "develop": "pnpm dev -r",
+    "lint": "eslint src/**/*.{js,vue,ts} --fix",
+    "lint:create": "eslint --init"
   },
   "repository": {
     "type": "git",

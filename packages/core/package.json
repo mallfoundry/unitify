@@ -1,15 +1,37 @@
 {
-  "name": "@unitify/~core",
-  "version": "0.1.0",
-  "description": "",
-  "scripts": {},
-  "keywords": [
-    "unitify",
-    "unitify-ui",
-    "ui",
-    "uni-app"
-
-  ],
-  "author": "",
-  "license": "MIT"
+  "name": "@unitify/core",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/**/*.{js,vue,ts} --fix",
+    "lint:create": "eslint --init",
+    "test": "jest"
+  },
+  "dependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "@vue/babel-plugin-jsx": "^1.1.1",
+    "@vue/test-utils": "^2.0.0-rc.18",
+    "babel-jest": "26.0.0",
+    "eslint": "^8.13.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "jest": "26.0.0",
+    "ts-jest": "26.4.4",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.5",
+    "vue-jest": "^5.0.0-alpha.10",
+    "vue-tsc": "^0.34.7"
+  }
 }

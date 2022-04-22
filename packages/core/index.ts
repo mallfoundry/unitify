@@ -1,12 +1,12 @@
 import { App } from "vue";
-import { Button } from "./components/button";
-import Avatar from "./components/avatar/avatar.vue";
-import { Icon } from "./components/icon";
-import { Tab, Tabs } from "./components/tabs";
-import { Swiper, SwiperItem } from "./components/swiper";
-import { FlexItem, Flex } from "./components/flex";
-import { Image } from "./components/image";
-import { Cell ,CellGroup} from "./components/cell";
+import { Button } from "./src/components/button";
+import Avatar from "./src/components/avatar/avatar.vue";
+import { Icon } from "./src/components/icon";
+import { Tab, Tabs } from "./src/components/tabs";
+import { Swiper, SwiperItem } from "./src/components/swiper";
+import { FlexItem, Flex } from "./src/components/flex";
+import { Image } from "./src/components/image";
+import { Cell, CellGroup } from "./src/components/cell";
 // 所有组件列表
 const components = [
   Button,
@@ -20,7 +20,7 @@ const components = [
   Flex,
   Image,
   Cell,
-  CellGroup
+  CellGroup,
 ];
 
 // 定义 install 方法， App 作为参数
@@ -41,7 +41,7 @@ export {
   Flex,
   Image,
   Cell,
-  CellGroup
+  CellGroup,
 };
 
 export default {
