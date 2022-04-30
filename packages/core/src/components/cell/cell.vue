@@ -3,17 +3,19 @@
     {
       'unitify-cell--active': clickable,
       'unitify-cell--large': size === 'large',
+      'unitify-cell--disabled': disabled === true,
+  
     },
   ]">
     <Flex v-if="title !== undefined" :align="align">
-      <FlexItem :span="titleWidth">
+      <FlexItem :span="labelWidth">
         <view class="unitify-cell--title">
           <Icon :name="icon" />
           <text>{{ title }}</text>
         </view>
         <view class="unitify-cell--label" v-if="title">{{ label }}</view>
       </FlexItem>
-      <FlexItem :span="(24 - Number(titleWidth)) + ''">
+      <FlexItem :span="(24 - Number(labelWidth)) + ''">
         <view v-if="$slots.default" class="unitify-cell--value">
           <slot></slot>
           <Icon :name="rightIcon" />
@@ -26,14 +28,14 @@
 
     </Flex>
     <Flex v-else :align="align">
-      <FlexItem :span="titleWidth">
+      <FlexItem :span="labelWidth">
         <view class="unitify-cell--title">
           <Icon :name="icon" />
           <text>{{ label }}</text>
         </view>
 
       </FlexItem>
-      <FlexItem :span="(24 - Number(titleWidth)) + ''">
+      <FlexItem :span="(24 - Number(labelWidth)) + ''">
         <view class="unitify-cell--value">
           <slot></slot>
           <Icon :name="rightIcon" />
@@ -72,9 +74,7 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    brief: {
-      type: String,
-    },
+
     size: {
       type: String,
     },
@@ -84,11 +84,14 @@ export default defineComponent({
     align: {
       type: String,
     },
-    titleWidth: {
+    labelWidth: {
       type: String,
       default: "12"
     },
-
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, { emit }) {
     return {};

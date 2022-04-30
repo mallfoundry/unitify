@@ -1,4 +1,10 @@
 @import "./variables";
 .#{$component-prefix}field {
-  color: #000;
+  color: $field-color;
+  &--disabled{
+    color: $field-disabled-color;
+  }
+  &--clearable{
+    cursor: pointer;
+  }
 }
