@@ -22,19 +22,9 @@
     
   }
   position: relative;
-  &::after{
-    position: absolute;
-    box-sizing: border-box;
-    pointer-events: none;
-    content: " ";
-    top: -50%;
-    right: -50%;
-    bottom: -50%;
-    left: -50%;
-
-    transform: scale(.5);
-    border-bottom: $cell-border-color $cell-border-width solid;
-
+  border-bottom: $cell-border-color $cell-border-width solid;
+  &:last-child{
+    border-bottom:none
   }
   &--content{
     display: flex;

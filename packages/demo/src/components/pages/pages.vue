@@ -19,5 +19,6 @@ export default defineComponent({
 .pages {
   background: #f7f8fa;
   min-height: 100vh;
+  padding: 30rpx;
 }
 </style>

@@ -57,6 +57,9 @@ export default defineComponent({
     align: {
       type: String,
     },
+    underline:{
+      type: Boolean,
+    }
   },
   setup(props, { emit }) {
     return {};

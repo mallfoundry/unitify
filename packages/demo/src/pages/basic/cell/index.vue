@@ -28,15 +28,9 @@
       </Cell-Group>
     </Block>
     <Block title="对齐方式">
-      <Cell title="单元格" brief="align start" size="large" align="start"
-        >内容</Cell
-      >
-      <Cell title="单元格" brief="align center" size="large" align="center"
-        >内容</Cell
-      >
-      <Cell title="单元格" brief="align end" size="large" align="end"
-        >内容</Cell
-      >
+      <Cell title="单元格" brief="align start" size="large" align="start">内容</Cell>
+      <Cell title="单元格" brief="align center" size="large" align="center">内容</Cell>
+      <Cell title="单元格" brief="align end" size="large" align="end">内容</Cell>
     </Block>
   </Pages>
 </template>
