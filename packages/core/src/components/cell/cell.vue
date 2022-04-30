@@ -6,23 +6,42 @@
     },
   ]">
     <Flex v-if="title !== undefined" :align="align">
-      <FlexItem span="12">
+      <FlexItem :span="titleWidth">
         <view class="unitify-cell--title">
           <Icon :name="icon" />
           <text>{{ title }}</text>
         </view>
-        <view class="unitify-cell--label">{{ label }}</view>
+        <view class="unitify-cell--label" v-if="title">{{ label }}</view>
       </FlexItem>
-      <FlexItem span="12">
-        <view class="unitify-cell--value">
-          <text>{{ value }}</text><Icon :name="rightIcon"/>
+      <FlexItem :span="(24 - Number(titleWidth)) + ''">
+        <view v-if="$slots.default" class="unitify-cell--value">
+          <slot></slot>
+          <Icon :name="rightIcon" />
+        </view>
+        <view v-else class="unitify-cell--value">
+          <text>{{ value }}</text>
+          <Icon :name="rightIcon" />
         </view>
       </FlexItem>
 
     </Flex>
-    <view v-else class="unitify-cell--title">
-      {{ value }}
-    </view>
+    <Flex v-else :align="align">
+      <FlexItem :span="titleWidth">
+        <view class="unitify-cell--title">
+          <Icon :name="icon" />
+          <text>{{ label }}</text>
+        </view>
+
+      </FlexItem>
+      <FlexItem :span="(24 - Number(titleWidth)) + ''">
+        <view class="unitify-cell--value">
+          <slot></slot>
+          <Icon :name="rightIcon" />
+        </view>
+      </FlexItem>
+
+    </Flex>
+
 
   </view>
 </template>
@@ -65,9 +84,11 @@ export default defineComponent({
     align: {
       type: String,
     },
-    underline: {
-      type: Boolean,
-    }
+    titleWidth: {
+      type: String,
+      default: "12"
+    },
+
   },
   setup(props, { emit }) {
     return {};

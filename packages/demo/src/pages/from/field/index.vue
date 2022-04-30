@@ -2,10 +2,9 @@
   <view class="swiper">
     <Pages>
       <Block title="基础使用">
-        <CellGroup >
-          <Field />
+        <CellGroup>
 
-          <Field />
+          <Field v-model="value" label="文本" placeholder="请输入用户名"/>
         </CellGroup>
       </Block>
     </Pages>
@@ -21,7 +20,7 @@ export default defineComponent({
   components: { Pages, Block },
   setup() {
     return {
-
+      value:"123"
     };
   },
 });
@@ -30,8 +29,6 @@ export default defineComponent({
 .block {
   width: 100%;
 
-  &-content {
-    display: block !important;
-  }
+  padding: 0;
 }
 </style>

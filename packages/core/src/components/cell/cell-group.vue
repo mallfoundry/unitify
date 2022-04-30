@@ -2,7 +2,7 @@
   <view class="unitify-cell-group" :class="[{ 'unitify-cell-group--inser': inset },
   { 'unitify-cell-group--bordered': bordered }
   ]">
-    <view class="unitify-cell-group--title">{{ title }}</view>
+    <view class="unitify-cell-group--title" v-if="title">{{ title }}</view>
     <slot></slot>
   </view>
 </template>
