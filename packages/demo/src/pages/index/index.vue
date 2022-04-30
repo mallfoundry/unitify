@@ -30,6 +30,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .page {
   padding: 15rpx;
+  background: #fff;
   &-logo {
     padding: 0 50rpx;
     &-info {

@@ -68,5 +68,12 @@ export default {
 .iframeBox {
   position: fixed;
   top: 100px;
+  background: #fafafa;
+  border-radius: 20px;
+  box-shadow: 0 8px 12px #ebedf0;
+  box-sizing: border-box;
+  min-width: 360px;
+  overflow: hidden;
+  z-index: 1;
 }
 </style>

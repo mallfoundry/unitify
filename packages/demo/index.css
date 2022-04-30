@@ -1,6 +1,11 @@
 #app {
+    box-sizing: border-box;
+    box-shadow: 0 0px 50px #ebedf0;
+    border-radius: 20px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 #app::-webkit-scrollbar { 
-    width: 0 !important 
+    width: 0 !important;
+    color: #323233;
 }
