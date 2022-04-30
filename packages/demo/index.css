@@ -1,0 +1,6 @@
+#app {
+    overflow-y: scroll;
+}
+#app::-webkit-scrollbar { 
+    width: 0 !important 
+}

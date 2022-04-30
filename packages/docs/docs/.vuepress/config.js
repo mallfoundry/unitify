@@ -1,5 +1,4 @@
 module.exports = {
-  
   title: "TypeScript4 文档",
   description: "TypeScript4 最新官方文档翻译",
   base: '/learn-typescript/',
@@ -9,7 +8,6 @@ module.exports = {
       lang: "zh-CN",
     },
   },
-
   themeConfig: {
     subSidebar: "auto",
     nav: [

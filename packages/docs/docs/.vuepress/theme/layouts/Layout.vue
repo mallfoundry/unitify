@@ -38,6 +38,7 @@ export default {
   },
   mounted() {
     this.menuList = this.$site.pages;
+    console.log(this.menuList);
     window.addEventListener("scroll", this.handlerScroll);
   },
   methods: {
@@ -65,7 +66,6 @@ export default {
   overflow: hidden;
 }
 .iframeBox {
-  border: 1px solid red;
   position: fixed;
   top: 100px;
 }

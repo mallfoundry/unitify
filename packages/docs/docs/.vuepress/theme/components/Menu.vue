@@ -1,17 +1,18 @@
 <template>
   <div class="menuBox" :style="{ top: scrollTop < 64 ? '64px' : 0 }">
     <el-menu
-      default-active="2"
+      default-active="0"
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
       router
     >
       <el-menu-item
-        :route="item.regularPath"
-        :index="index"
         v-for="(item, index) in menuList"
         :key="item.key"
+        :default-active="0"
+        :route="item.regularPath"
+        :index="index"
       >
         <span slot="title">{{ item.title }}</span>
       </el-menu-item>
@@ -31,19 +32,16 @@ export default {
     }
   },
   methods:{
-        handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    handleOpen() {
+      console.log("开始")
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    },
+    handleClose() {
+      console.log("结束")
+    }
   }
 };
 </script>
 
-<style scoped>
-.menuBox {
-  position: fixed;
-  width: 220px;
-}
+<style lang="scss" scoped>
+@import './styles/menu.scss'
 </style>

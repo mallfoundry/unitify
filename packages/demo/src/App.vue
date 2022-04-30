@@ -10,4 +10,3 @@ onHide(() => {
   console.log("App Hide");
 });
 </script>
-
