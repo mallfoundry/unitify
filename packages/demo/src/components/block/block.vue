@@ -26,10 +26,17 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .block {
+  background: #fff;
+
   &-title {
-    padding: 30rpx;
+
     font-size: 26rpx;
     color: rgba(69, 90, 100, 0.6);
+    padding: 10rpx;
+
   }
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
 }
 </style>

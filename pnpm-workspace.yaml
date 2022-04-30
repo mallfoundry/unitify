@@ -1,4 +1,5 @@
 packages:
-- "packages/demo/**"
-- "packages/docs/**"
-
+# - "packages/demo/**"
+- "packages/icon/**"
+# - "packages/cli/**"
+- "packages/core/**"

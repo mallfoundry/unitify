@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint src/**/*.{js,vue,ts} --fix",
@@ -11,6 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "vite-plugin-eslint": "^1.5.2",
     "vue": "^3.2.25"
   },
   "devDependencies": {
