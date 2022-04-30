@@ -2,7 +2,11 @@
   <view class="swiper">
     <Pages>
       <Block title="基础使用">
-        <Field > </Field>
+        <CellGroup >
+          <Field />
+
+          <Field />
+        </CellGroup>
       </Block>
     </Pages>
   </view>

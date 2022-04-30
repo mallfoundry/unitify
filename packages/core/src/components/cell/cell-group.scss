@@ -1,6 +1,7 @@
 @import "./variables";
 .#{$component-prefix}cell-group {
     background-color: $cell-background-color;
+    
     &--bordered{
       border:$cell-border-color $cell-border-width solid; ;
     }
@@ -11,19 +12,8 @@
    &--title {
      color: $cell-value-color;
      padding: $cell-padding;
-     position: relative;
-     &::after {
-       position: absolute;
-       -webkit-box-sizing: border-box;
-       box-sizing: border-box;
-       pointer-events: none;
-       content: " ";
-       top: -50%;
-       right: -50%;
-       bottom: -50%;
-       left: -50%;
-       transform: scale(0.5);
-       border-bottom: $cell-border-color $cell-border-width solid;
-     }
+     padding-bottom: 8rpx;
+     font-size: $cell-font-size;
+     border-bottom: $cell-border-color $cell-border-width solid;
    }
 }

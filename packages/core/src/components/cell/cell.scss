@@ -4,51 +4,40 @@
 
   font-size: $cell-font-size;
   padding: $cell-padding;
-
+ 
+  
   background-color: $cell-background-color;
+
+  &:last-child{
+    border-bottom: none;
+  }
+  &--title{
+    
+  }
+  &--label{
+    color: $cell-value-color;
+    font-size: var(--cell-label-font-size,$cell-label-font-size);
+  }
+  &--value{
+
+    color: $cell-value-color;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
   &--active{
     &:active{
       background-color: $cell-active-color;
     }
   }
-  &--large {
-    padding-top: var(--cell-large-vertical-padding, $cell-large-vertical-padding);
-    padding-bottom: var(--cell-large-vertical-padding, $cell-large-vertical-padding);
 
-    .#{$component-prefix}cell--content--left--title {
-      font-size: var(--cell-large-title-font-size, $cell-large-title-font-size);
-    }
-
-    
-  }
-  position: relative;
   border-bottom: $cell-border-color $cell-border-width solid;
-  &:last-child{
-    border-bottom:none
-  }
-  &--content{
-    display: flex;
-    box-sizing: border-box;
 
-    &--left{
-      flex:1;
-      color:$cell-color;
-      &--brief{
-        font-size: $cell-brief-font-size;
-        margin-top: 8rpx;
-        color: $cell-value-color;
-      }
-    }
-    &--right{
-      text-align: right;
-      flex: 1;
-      color: $cell-value-color;
-      display: flex;
-      flex-direction: column;
-      &--text{
-        margin-right: 10rpx;
-      }
+  &--large{
+    padding: $cell-large-vertical-padding;
+    font-size: $cell-large-font-size;
+    .unitify-cell--label{
+      font-size: $cell-large-label-font-size;
     }
   }
-
 }

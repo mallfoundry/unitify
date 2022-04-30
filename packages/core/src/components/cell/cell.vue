@@ -1,42 +1,50 @@
 <template>
-  <view
-    class="unitify-cell"
-    :class="[
-      {
-        'unitify-cell--active': clickable,
-        'unitify-cell--large': size === 'large',
-      },
-    ]"
-  >
-    <view class="unitify-cell--content">
-      <view class="unitify-cell--content--left">
-        <view class="unitify-cell--content--left--title">
-          <Icon :name="icon"></Icon>
-          {{ title }}
-          <slot v-if="!title"></slot>
+  <view class="unitify-cell" :class="[
+    {
+      'unitify-cell--active': clickable,
+      'unitify-cell--large': size === 'large',
+    },
+  ]">
+    <Flex v-if="title !== undefined" :align="align">
+      <FlexItem span="12">
+        <view class="unitify-cell--title">
+          <Icon :name="icon" />
+          <text>{{ title }}</text>
         </view>
-        <view class="unitify-cell--content--left--brief">{{ brief }}</view>
-      </view>
-      <view class="unitify-cell--content--right" v-if="title" :style="{justifyContent:align}">
-        <view>
-          <text class="unitify-cell--content--right--text"><slot></slot></text>
-          <Icon :name="rightIcon" />
+        <view class="unitify-cell--label">{{ label }}</view>
+      </FlexItem>
+      <FlexItem span="12">
+        <view class="unitify-cell--value">
+          <text>{{ value }}</text><Icon :name="rightIcon"/>
         </view>
-      </view>
+      </FlexItem>
+
+    </Flex>
+    <view v-else class="unitify-cell--title">
+      {{ value }}
     </view>
+
   </view>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
 import { Icon } from "../icon";
+import { Flex, FlexItem } from "../flex"
 export default defineComponent({
+
   name: "Cell",
   components: {
-    Icon,
+    Icon, Flex, FlexItem
   },
   props: {
     title: {
       type: String,
+    },
+    value: {
+      type: String,
+    },
+    label: {
+      type: String
     },
     rightIcon: {
       type: String,
@@ -57,7 +65,7 @@ export default defineComponent({
     align: {
       type: String,
     },
-    underline:{
+    underline: {
       type: Boolean,
     }
   },
