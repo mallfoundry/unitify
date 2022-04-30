@@ -50,10 +50,16 @@ export default [
         name: "Button",
         path: "swiper/index",
       },
+
+    ],
+  },  {
+    root: "pages/from",
+    title: "表单组件",
+    pages: [
       {
-        title: "Icon 图标",
-        name: "Icon",
-        path: "icon/index",
+        title: "Field 输入框",
+        name: "Field",
+        path: "field/index",
       },
     ],
   },

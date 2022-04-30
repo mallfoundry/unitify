@@ -29,6 +29,7 @@ export default defineComponent({
   setup() {
     const jumpComponent = (root: string, path: string) => {
       const url = "/" + root + "/" + path;
+      console.log(url)
       uni.navigateTo({
         url,
       });

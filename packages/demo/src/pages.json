@@ -13,6 +13,11 @@
 				"navigationBarTitleText": "cell"
 			}
 		}, {
+			"path": "pages/from/field/index",
+			"style": {
+				"navigationBarTitleText": "field"
+			}
+		}, {
 			"path": "pages/basic/image/index",
 			"style": {
 				"navigationBarTitleText": "image"
