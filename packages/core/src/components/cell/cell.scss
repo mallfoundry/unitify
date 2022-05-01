@@ -1,18 +1,23 @@
 @import "./variables";
 .#{$component-prefix}cell {
   font-family: $base-font-family;
-
+  overflow: hidden;
   font-size: $cell-font-size;
   padding: $cell-padding;
   box-sizing: border-box;
   
   background-color: $cell-background-color;
-
+  &--disabled{
+    color: $cell-value-color !important;
+  }
   &:last-child{
     border-bottom: none;
   }
   &--title{
     
+  }
+  &--required{
+    color: $cell-required-color;
   }
   &--label{
     color: $cell-value-color;

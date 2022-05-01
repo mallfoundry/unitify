@@ -6,7 +6,7 @@
 
 <template>
   
-  <view>s</view>
+  <view>App</view>
 </template>
 
 <style>
