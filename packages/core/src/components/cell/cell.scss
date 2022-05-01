@@ -16,6 +16,9 @@
   &--title{
     
   }
+  &--required{
+    color: $cell-required-color;
+  }
   &--label{
     color: $cell-value-color;
     font-size: var(--cell-label-font-size,$cell-label-font-size);

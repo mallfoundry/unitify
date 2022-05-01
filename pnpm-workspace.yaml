@@ -1,5 +1,0 @@
-packages:
-# - "packages/demo/**"
-- "packages/icon/**"
-# - "packages/cli/**"
-- "packages/core/**"

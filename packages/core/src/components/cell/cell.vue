@@ -1,12 +1,14 @@
 <template>
-  <view class="unitify-cell" :class="[
-    {
-      'unitify-cell--active': clickable,
-      'unitify-cell--large': size === 'large',
-      'unitify-cell--disabled': disabled === true,
-  
-    },
-  ]">
+  <view
+    class="unitify-cell"
+    :class="[
+      {
+        'unitify-cell--active': clickable,
+        'unitify-cell--large': size === 'large',
+        'unitify-cell--disabled': disabled === true,
+      },
+    ]"
+  >
     <Flex v-if="title !== undefined" :align="align">
       <FlexItem :span="labelWidth">
         <view class="unitify-cell--title">
@@ -15,7 +17,7 @@
         </view>
         <view class="unitify-cell--label" v-if="title">{{ label }}</view>
       </FlexItem>
-      <FlexItem :span="(24 - Number(labelWidth)) + ''">
+      <FlexItem :span="24 - Number(labelWidth) + ''">
         <view v-if="$slots.default" class="unitify-cell--value">
           <slot></slot>
           <Icon :name="rightIcon" />
@@ -25,37 +27,36 @@
           <Icon :name="rightIcon" />
         </view>
       </FlexItem>
-
     </Flex>
     <Flex v-else :align="align">
       <FlexItem :span="labelWidth">
         <view class="unitify-cell--title">
           <Icon :name="icon" />
-          <text>{{ label }}</text>
+          <text><text class="unitify-cell--required">{{required?'*':''}}</text> {{ label }}</text>
         </view>
-
       </FlexItem>
-      <FlexItem :span="(24 - Number(labelWidth)) + ''">
+      <FlexItem :span="24 - Number(labelWidth) + ''">
         <view class="unitify-cell--value">
           <slot></slot>
           <Icon :name="rightIcon" />
         </view>
+        <slot name="error-message"></slot>
+        <slot name="show-word-limit"></slot>
       </FlexItem>
-
+      
     </Flex>
-
-
   </view>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, inject } from "vue";
 import { Icon } from "../icon";
-import { Flex, FlexItem } from "../flex"
+import { Flex, FlexItem } from "../flex";
 export default defineComponent({
-
   name: "Cell",
   components: {
-    Icon, Flex, FlexItem
+    Icon,
+    Flex,
+    FlexItem,
   },
   props: {
     title: {
@@ -65,7 +66,7 @@ export default defineComponent({
       type: String,
     },
     label: {
-      type: String
+      type: String,
     },
     rightIcon: {
       type: String,
@@ -86,21 +87,16 @@ export default defineComponent({
     },
     labelWidth: {
       type: String,
-      default: "12"
+      default: "12",
     },
-    disabled: {
-      type: Boolean,
-      default: false
-    }
   },
   setup(props, { emit }) {
-    return {};
+    const disabled = inject("disabled");
+    const required = inject("required");
+    return { disabled, required };
   },
 });
 </script>
-
-
-
 
 <style lang="scss" scoped>
 @import "./cell.scss";
