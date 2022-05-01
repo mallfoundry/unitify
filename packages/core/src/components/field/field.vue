@@ -7,6 +7,7 @@
     :align="$slots.button ? 'center' : ''"
   >
     <input
+      v-bind="$attrs"
       v-if="!autosize && type != 'textarea'"
       @blur="filedBlur"
       @focus="fileFocus"
@@ -28,6 +29,8 @@
       :class="disabled ? 'unitify-field--disabled' : null"
       class="unitify-field"
       auto-height
+      :disabled="disabled"
+      v-bind="$attrs"
       v-model="value"
       :maxlength="maxlength"
     ></textarea>
@@ -108,9 +111,12 @@ export default defineComponent({
     },
   },
 
-  setup(props, { emit, slots }) {
+  setup(props, { emit, attrs }) {
+    console.log(attrs);
+
     provide("required", props.required);
     provide("disabled", props.disabled);
+
     const value = ref(props.modelValue);
     watch(
       () => value.value,

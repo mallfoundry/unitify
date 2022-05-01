@@ -110,7 +110,6 @@
         <CellGroup>
           <Field
             v-model="message"
-            autosize
             show-word-limit
             maxlength="50"
             label="留言"
